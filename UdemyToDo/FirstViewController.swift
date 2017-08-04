@@ -10,11 +10,21 @@ import UIKit
 
 class FirstViewController: UIViewController {
 
+    var itemlist = [String]()
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        if let i = UserDefaults.standard.object(forKey: "items") as? [String] {
+            itemlist = i
+        }
+        
+        tasktable.reloadData()
+        
     }
 
+    @IBOutlet weak var tasktable: UITableView!
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -31,14 +41,14 @@ extension FirstViewController: UITableViewDataSource {
     internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         //TODO
-        return 10
+        return itemlist.count
     }
 
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "Cell" )
         
-        cell.textLabel?.text = "Test"
+        cell.textLabel?.text = itemlist[indexPath.row]
         
         return cell
         

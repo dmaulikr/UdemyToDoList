@@ -71,6 +71,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Tasks" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="tasktable" destination="2Qe-U1-223" id="0qr-nl-1SK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -88,21 +91,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Add Item" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="oGn-RZ-j6I">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" text="Add Item" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="oGn-RZ-j6I">
                                 <rect key="frame" x="16" y="20" width="145" height="42"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K6r-gc-fV1">
-                                <rect key="frame" x="16" y="83" width="268" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter an item" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K6r-gc-fV1">
+                                <rect key="frame" x="16" y="83" width="305" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8S-Pr-If7">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8S-Pr-If7">
                                 <rect key="frame" x="329" y="82" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add"/>
                                 <connections>
                                     <action selector="addItem:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="T1p-zT-4Ak"/>
@@ -111,11 +115,9 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="oGn-RZ-j6I" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="MDN-Rt-qCB"/>
-                            <constraint firstItem="x8S-Pr-If7" firstAttribute="leading" secondItem="K6r-gc-fV1" secondAttribute="trailing" constant="29" id="Szb-SP-mPB"/>
-                            <constraint firstItem="K6r-gc-fV1" firstAttribute="top" secondItem="oGn-RZ-j6I" secondAttribute="bottom" constant="21" id="Uot-3j-aDf"/>
-                            <constraint firstItem="x8S-Pr-If7" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="ZeI-7j-lGy"/>
-                            <constraint firstItem="oGn-RZ-j6I" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="cQg-ur-pQw"/>
+                            <constraint firstItem="K6r-gc-fV1" firstAttribute="top" secondItem="oGn-RZ-j6I" secondAttribute="bottom" constant="21" id="8cT-fa-6cy"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="K6r-gc-fV1" secondAttribute="leading" id="Qo4-bg-ycS"/>
+                            <constraint firstItem="oGn-RZ-j6I" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="xuD-lV-oF9"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add Items" image="first" id="cPa-gy-q4n"/>

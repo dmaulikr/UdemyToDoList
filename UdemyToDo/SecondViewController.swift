@@ -19,7 +19,7 @@ class SecondViewController: UIViewController {
         var itemlist = [String]()
         
         // Try to load an existing itemlist
-        if var i = UserDefaults.standard.object(forKey: "items") as? [String] {
+        if let i = UserDefaults.standard.object(forKey: "items") as? [String] {
             
             itemlist = i
             
@@ -44,6 +44,8 @@ class SecondViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
 
 
 }
