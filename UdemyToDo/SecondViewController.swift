@@ -10,11 +10,36 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
+    
+    @IBAction func addItem(_ sender: Any) {
+        // Load in itemlist from storage
+        // Shouldn't we be able to pass this between controllers?
+        // I hate this pattern but don't know a better one yet
+
+        var itemlist = [String]()
+        
+        // Try to load an existing itemlist
+        if var i = UserDefaults.standard.object(forKey: "items") as? [String] {
+            
+            itemlist = i
+            
+        }
+        
+        itemlist.append(textfield.text!)
+        
+        // Save to storage
+        UserDefaults.standard.set(itemlist, forKey: "items")
+        
+    }
+    
+        
+    @IBOutlet weak var textfield: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
-
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
