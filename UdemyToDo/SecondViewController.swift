@@ -26,6 +26,7 @@ class SecondViewController: UIViewController {
         }
         
         itemlist.append(textfield.text!)
+        textfield.text = ""
         
         // Save to storage
         UserDefaults.standard.set(itemlist, forKey: "items")
@@ -45,7 +46,10 @@ class SecondViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
+//    func dismissKeyboard() {
+//        view.endEditing(true)
+//        // do aditional stuff
+//    }
 
 
 }

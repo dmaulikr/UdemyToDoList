@@ -14,13 +14,18 @@ class FirstViewController: UIViewController {
     
 
     override func viewDidLoad() {
+
         super.viewDidLoad()
         
         if let i = UserDefaults.standard.object(forKey: "items") as? [String] {
             itemlist = i
         }
         
+        print("Reloading tasktable")
+        print("Itemlist is \(String(describing: itemlist))")
         tasktable.reloadData()
+        
+
         
     }
 
@@ -40,7 +45,6 @@ extension FirstViewController: UITableViewDataSource {
     
     internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        //TODO
         return itemlist.count
     }
 
