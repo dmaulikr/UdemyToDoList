@@ -12,7 +12,6 @@ class FirstViewController: UIViewController {
 
     var itemlist = [String]()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -37,6 +36,17 @@ class FirstViewController: UIViewController {
 }
 
 extension FirstViewController: UITableViewDelegate {
+
+    
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            itemlist.remove(at: indexPath.row)
+            UserDefaults.standard.set(itemlist, forKey: "items")
+            self.tasktable.reloadData()
+            
+        }
+    }
     
 }
 
