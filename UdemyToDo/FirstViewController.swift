@@ -12,23 +12,22 @@ class FirstViewController: UIViewController {
 
     var itemlist = [String]()
     
-
+    
     override func viewDidLoad() {
-
         super.viewDidLoad()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
         
         if let i = UserDefaults.standard.object(forKey: "items") as? [String] {
             itemlist = i
         }
         
-        print("Reloading tasktable")
-        print("Itemlist is \(String(describing: itemlist))")
-        tasktable.reloadData()
-        
-
+        self.tasktable.reloadData()
         
     }
-
+    
+    
     @IBOutlet weak var tasktable: UITableView!
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

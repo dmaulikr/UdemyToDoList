@@ -54,3 +54,15 @@ class SecondViewController: UIViewController {
 
 }
 
+
+extension SecondViewController: UITextFieldDelegate {
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textfield.resignFirstResponder()
+        return true
+    }
+}
